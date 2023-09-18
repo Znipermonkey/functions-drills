@@ -280,8 +280,14 @@ let loser = 'Glimmer'
 */
 
 //CODE HERE
-
-
+function theEliminator(contestants, loser){
+  for (let i = 0; i < contestants.length; i++)
+    if (contestants[i] === loser){
+      contestants.splice(i, 1)
+    }
+  return contestants
+}
+console.log(theEliminator(contestants, loser))
 ////////////////// PROBLEM 17 ////////////////////
 let sampleString = "Hi, my name is Kylo."
 /*
@@ -290,8 +296,10 @@ let sampleString = "Hi, my name is Kylo."
 */
 
 //CODE HERE
-
-
+function uppercase(string){
+  console.log(string.toUpperCase())
+}
+uppercase(sampleString)
 ////////////////// PROBLEM 18 ////////////////////
 /*
   Write a function called emailCheck that takes in
@@ -303,6 +311,16 @@ let sampleString = "Hi, my name is Kylo."
   return 'must provide a valid email address'
 */
 
+function emailCheck(email){
+  email.trim()
+  String(email)
+  if(email.includes('@')){
+    return 'email veified'
+  }else{
+    return"must provide a valid email address"
+  }
+}
+console.log(emailCheck("@gmail    .com"))
 ////////////////// PROBLEM 19 ////////////////////
 /*
   Write a function, naming it whatever you believe to be appropriate, that buys as many chocolate frogs as possible with a certain amount of gold. Each chocolate frog costs 3 gold. Your function should take in a single parameter, which is the amount of gold you are willing to spend. Your function should return a total amount of chocolate frogs you were able to purchase.
@@ -310,25 +328,52 @@ let sampleString = "Hi, my name is Kylo."
 */
 
 //CODE HERE
-
-
+function chocolateFrogs(gold){
+      let Totalfrogs = Number(gold)/3
+      return (Totalfrogs)
+}
+console.log(chocolateFrogs(66))
 ////////////////// PROBLEM 20 ////////////////////
 /*
   You might have noticed a slight bug in the previous problem. If you were to pass in 4 gold, the function would return to you 1.3333... However, you can't really go to a store and by 1.333 products. You would just be able to purchase 1 product. Re-write the function you used in the previous problem (give it the same name, just add a 2 to the end of it) that fixes this bug. Invoke the function and store the returned value to a variable called `totalFrogs2`.
 */
 
 //CODE HERE
-
+function chocolateFrogs2(gold){
+  if(gold % 3 === 0){
+    let Totalfrogs2 = Number(gold)/3
+  return (`${Totalfrogs2} frogs`)
+  }else if ((gold -1) % 3 === 0){
+    let Totalfrogs2 = (Number(gold)-1)/3
+    return (`${Totalfrogs2} frogs with 1 gold left over`)
+  }else if ((gold -2) % 3 === 0){
+    let Totalfrogs2 = (Number(gold)-2)/3
+    return (`${Totalfrogs2} frogs with 2 gold left over`)
+  }
+}
+console.log(chocolateFrogs2(65))
 
 ////////////////// PROBLEM 21 ////////////////////
 let sampleArray = [0,1,2,3,4,7,5,6,8,9]
+let sampleArray2 = [0,1,2,3,4,5,6,7,8,9]
 /*
   Write a function that takes in an array of numbers as an argument. In the body of the function, write logic to determine if the array is in ascending order. The function should return true, if it is sorted in ascending order, false if it is not. Create a variable, `arrayIsAscending` and set it equal to your function invoked. Use the sample array to test this function.
 */
 
 //CODE HERE
+let ascending = (arr) =>{
+  for(let i = 0; i < arr.length; i++){
+    if(arr[i] >= arr [i-1]){
+      //console.log(arr[i])
+    }else if(arr[i] < arr [i-1]){
+      return(false)
+    }
 
-
+  }
+  return true
+}
+let arrayIsAscending = ascending(sampleArray)
+console.log(arrayIsAscending)
 ////////////////// PROBLEM 22 ////////////////////
 
 let duck = "cute";
