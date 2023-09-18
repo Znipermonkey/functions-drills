@@ -312,15 +312,15 @@ uppercase(sampleString)
 */
 
 function emailCheck(email){
-  email.trim()
-  String(email)
+  email = email.trim()
+  email = String(email)
   if(email.includes('@')){
     return 'email veified'
   }else{
     return"must provide a valid email address"
   }
 }
-console.log(emailCheck("@gmail    .com"))
+console.log(emailCheck('@gmail.com'))
 ////////////////// PROBLEM 19 ////////////////////
 /*
   Write a function, naming it whatever you believe to be appropriate, that buys as many chocolate frogs as possible with a certain amount of gold. Each chocolate frog costs 3 gold. Your function should take in a single parameter, which is the amount of gold you are willing to spend. Your function should return a total amount of chocolate frogs you were able to purchase.
@@ -340,14 +340,15 @@ console.log(chocolateFrogs(66))
 
 //CODE HERE
 function chocolateFrogs2(gold){
+  gold = Number(gold)
   if(gold % 3 === 0){
-    let Totalfrogs2 = Number(gold)/3
+    let Totalfrogs2 = gold/3
   return (`${Totalfrogs2} frogs`)
   }else if ((gold -1) % 3 === 0){
-    let Totalfrogs2 = (Number(gold)-1)/3
+    let Totalfrogs2 = (gold-1)/3
     return (`${Totalfrogs2} frogs with 1 gold left over`)
   }else if ((gold -2) % 3 === 0){
-    let Totalfrogs2 = (Number(gold)-2)/3
+    let Totalfrogs2 = (gold-2)/3
     return (`${Totalfrogs2} frogs with 2 gold left over`)
   }
 }
